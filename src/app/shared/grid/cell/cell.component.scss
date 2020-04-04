@@ -1,0 +1,22 @@
+:host {
+  background: red;
+/*   --col-start: 1;
+  --col-span: 1;
+  --row-start: 1;
+  --row-span: 1;
+  --h-alignment:center;
+  --v-alignment:center;
+ */
+
+  grid-column: var(--col-start) / span var(--col-span);
+  grid-row: var(--row-start) / span var(--row-span);
+
+  @media all and (-ms-high-contrast: none),
+  (-ms-high-contrast: active) {
+    -ms-grid-column: var(--col-start);
+    -ms-grid-column-span: var(--col-span);
+    -ms-grid-row: var(--row-start);
+    -ms-grid-row-span: var(--row-span);
+  }
+
+}
