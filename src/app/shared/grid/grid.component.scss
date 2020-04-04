@@ -3,13 +3,15 @@
   display: -ms-grid;
   width: calc(100% - (var(--gap) * 2));
   position: relative;
-  // height: calc(100% - (var(--gap) * 2));
   grid-template-columns: repeat(var(--col-repeat), var(--col-template));
   grid-template-rows: repeat(var(--row-repeat), var(--row-template));
+  grid-auto-columns: var(--col-template);
+  grid-auto-rows: var(--row-template);
   grid-gap: var(--gap);
   grid-column-gap: var(--col-gap);
   grid-row-gap: var(--row-gap);
   padding: var(--gap);
+ 
 
   @media all and (-ms-high-contrast: none),
   (-ms-high-contrast: active) {
