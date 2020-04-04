@@ -13,7 +13,7 @@ export class CellComponent implements OnInit {
   cell: Cell;
   name: string;
   @Input() position: object;
-  @Input() contentAlignment: string;
+  @Input('content-alignment') contentAlignment: string;
 
   constructor(private elRef: ElementRef, private renderer: Renderer2, private breakpointObserver: BreakpointObserver) { }
 
@@ -97,15 +97,17 @@ export class CellComponent implements OnInit {
 
   setStyles() {
     const bp = this.currentBreakpoint;
-    const styles =
+    if(this.cell.position) {
+      const styles =
       this.setCssVar('--col-start', this.cell.position[bp].x) +
       this.setCssVar('--col-span', this.cell.position[bp].size.charAt(0)) +
       this.setCssVar('--row-start', this.cell.position[bp].y) +
       this.setCssVar('--row-span', this.cell.position[bp].size.charAt(2));
 
-    if (styles != this.styles) {
-      this.renderer.setAttribute(this.elRef.nativeElement, 'style', styles);
-      this.styles = styles;
+      if (styles != this.styles) {
+        this.renderer.setAttribute(this.elRef.nativeElement, 'style', styles);
+        this.styles = styles;
+      }
     }
   }
 

@@ -1,0 +1,136 @@
+[content-alignment] {
+  
+
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: flex;
+
+ 
+  
+    // Flex Direction
+    &:not([content-alignment*='vertical']),
+    &[content-alignment*='horizontal'] {
+      -webkit-flex-direction: row;
+      flex-direction: row;
+  
+      &[content-alignment*='reverse'] {
+        -webkit-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+      }
+    }
+  
+    &[content-alignment*='vertical'] {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+  
+      &[content-alignment*='reverse'] {
+        -webkit-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+      }
+    }
+  
+    // Flex Wrap
+    &[content-alignment*='wrap'] {
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+  
+      &[content-alignment*='reverse'] {
+        -webkit-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+      }
+    }
+  
+    // Place content for row direction 
+  
+    &:not([content-alignment*='vertical']),
+    &[content-alignment*='horizontal'] {
+  
+      &[content-alignment*='left'],
+      &[content-alignment*='x-start'] // best to use start/end for websites are both ltr & rtl
+  
+        {
+        justify-content: flex-start;
+      }
+  
+      &[content-alignment*='center'] {
+        justify-content: center;
+      }
+  
+      &[content-alignment*='right'],
+      &[content-alignment*='x-end'] {
+        justify-content: flex-end;
+      }
+  
+      &[content-alignment*='distribute-h'] {
+        justify-content: space-around;
+      }
+  
+      &[content-alignment*='space-between-h'] {
+        justify-content: space-between;
+      }
+  
+      &[content-alignment*='top'] {
+        align-items: flex-start;
+      }
+  
+      &[content-alignment*='middle'] {
+        align-items: center;
+      }
+  
+      &[content-alignment*='bottom'] {
+        align-items: flex-end;
+      }
+  
+      &[content-alignment*='stretch-v'] {
+        align-items: stretch;
+      }
+  
+    }
+  
+  
+    // Place content for column direction 
+  
+    &[content-alignment*='vertical'] {
+  
+      &[content-alignment*='left'],
+      &[content-alignment*='x-start'] {
+        align-items: flex-start;
+      }
+  
+      &[content-alignment*='center'] {
+        align-items: center;
+      }
+  
+      &[content-alignment*='right'],
+      &[content-alignment*='x-end'] {
+        align-items: flex-end;
+      }
+  
+      &[content-alignment*='distribute-v'] {
+        justify-content: space-around;
+      }
+  
+      &[content-alignment*='space-between-v'] {
+        justify-content: space-between;
+      }
+  
+      &[content-alignment*='top'] {
+        justify-content: flex-start;
+      }
+  
+      &[content-alignment*='middle'] {
+        justify-content: center;
+      }
+  
+      &[content-alignment*='bottom'] {
+        justify-content: flex-end;
+      }
+  
+      &[content-alignment*='stretch-v'] {
+        justify-content: stretch;
+      }
+  
+    }
+  }
+  

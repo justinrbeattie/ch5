@@ -2,8 +2,9 @@
   display: grid;
   display: -ms-grid;
   width: calc(100% - (var(--gap) * 2));
- // height: calc(100% - (var(--gap) * 2));
-  grid-template-columns: repeat(var(--col-repeat), var(--col-template) );
+  position: relative;
+  // height: calc(100% - (var(--gap) * 2));
+  grid-template-columns: repeat(var(--col-repeat), var(--col-template));
   grid-template-rows: repeat(var(--row-repeat), var(--row-template));
   grid-gap: var(--gap);
   grid-column-gap: var(--col-gap);
@@ -15,4 +16,28 @@
     -ms-grid-columns: (var(--col-template))[var(--col-repeat)];
     -ms-grid-rows: (var(--row-template))[var(--row-repeat)];
   }
+}
+
+
+:host-context([debug]) {
+  background: lightcoral;
+
+  &:hover {
+    padding-top: calc(1rem + var(--gap) * 3);
+  }
+
+  &:hover:before {
+    padding: .5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    content: 'DEBUG: 'attr(style);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: calc(var(--gap) * 2);
+    line-height: calc(var(--gap) * 2);
+    color: white;
+    background: blue;
+  }
+
 }

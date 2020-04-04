@@ -1,13 +1,5 @@
 :host {
-  background: red;
-/*   --col-start: 1;
-  --col-span: 1;
-  --row-start: 1;
-  --row-span: 1;
-  --h-alignment:center;
-  --v-alignment:center;
- */
-
+    position:relative;
   grid-column: var(--col-start) / span var(--col-span);
   grid-row: var(--row-start) / span var(--row-span);
 
@@ -19,4 +11,24 @@
     -ms-grid-row-span: var(--row-span);
   }
 
+}
+
+:host-context([debug]) {
+  background: lightblue;
+  padding-top: calc(var(--gap) * 3);
+
+  &:hover:before {
+    padding:.5rem;
+    width:calc(100% - 1rem);
+    height:calc(100% - 1rem);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    content: 'DEBUG: 'attr(style) attr(content-alignment);
+    position: absolute;
+    top:0;
+    left: 0;
+    color: white;
+    background: blue;
+
+  }
 }

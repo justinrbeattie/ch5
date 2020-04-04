@@ -1,13 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/styles/alignment';
 
 :root {
-    --col-repeat: 1;
-    --col-template: 1fr;
-    --col-gap: 1rem;
-    --col-pad: var(--col-gap);
-    --row-repeat: 1;
-    --row-template: 1fr;
-    --row-gap: 1rem;
-    --row-pad: var(--row-gap);  
-    --gap:1rem;
+  --col-repeat: 1;
+  --col-template: 1fr;
+  --col-gap: 1rem;
+  --col-pad: var(--col-gap);
+  --row-repeat: 1;
+  --row-template: 1fr;
+  --row-gap: 1rem;
+  --row-pad: var(--row-gap);
+  --gap: 1rem;
+  
+  --col-start: auto;
+  --col-span: auto;
+  --row-start: auto;
+  --row-span: auto;
+  --h-alignment: center;
+  --v-alignment: center;
+
 }
