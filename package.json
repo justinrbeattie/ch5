@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~9.1.0",
     "@angular/router": "~9.1.0",
     "@crestron/ch5-crcomlib": "^0.1.1",
+    "angular-material-css-vars": "^0.3.9",
     "core-js": "^3.6.4",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",

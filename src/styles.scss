@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import './assets/styles/alignment';
+@import './assets/styles/spacing';
+@import './assets/styles/fonts';
+@import './assets/styles/theme';
+
 
 :root {
   --col-repeat: 1;
@@ -11,12 +15,13 @@
   --row-gap: 1rem;
   --row-pad: var(--row-gap);
   --gap: 1rem;
-  
+
   --col-start: auto;
   --col-span: auto;
   --row-start: auto;
   --row-span: auto;
   --h-alignment: center;
   --v-alignment: center;
-
+  font-family: 'Inter', sans-serif;
+  transition: font-weight .45s cubic-bezier(.25, .8, .25, 1);
 }
