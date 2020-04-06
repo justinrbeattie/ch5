@@ -6,6 +6,9 @@
         display: -ms-flex;
         display: flex;
 
+        justify-content: center;
+        align-items: center;
+
  
   
     // Flex Direction
@@ -75,7 +78,8 @@
       }
   
       &[content-alignment*='middle'] {
-        align-items: center;
+   
+        
       }
   
       &[content-alignment*='bottom'] {

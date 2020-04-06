@@ -1,4 +1,10 @@
 :host {
+
+  --col-start: auto;
+  --col-span: auto;
+  --row-start: auto;
+  --row-span: auto;
+
   position: relative;
   grid-column: var(--col-start) / span var(--col-span);
   grid-row: var(--row-start) / span var(--row-span);

@@ -1,4 +1,10 @@
 :host {
+
+  --col-repeat: 1;
+  --col-template: content;
+  --row-repeat: auto;
+  --row-template: content;
+
   display: grid;
   display: -ms-grid;
   width: calc(100% - (var(--gap) * 2));
@@ -7,17 +13,19 @@
   grid-template-rows: repeat(var(--row-repeat), var(--row-template));
   grid-auto-columns: var(--col-template);
   grid-auto-rows: var(--row-template);
-  grid-gap: var(--gap);
   grid-column-gap: var(--col-gap);
   grid-row-gap: var(--row-gap);
   padding: var(--gap);
- 
+  grid-gap: var(--gap);
+
 
   @media all and (-ms-high-contrast: none),
   (-ms-high-contrast: active) {
     -ms-grid-columns: (var(--col-template))[var(--col-repeat)];
     -ms-grid-rows: (var(--row-template))[var(--row-repeat)];
   }
+
+
 }
 
 

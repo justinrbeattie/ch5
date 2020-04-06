@@ -7,31 +7,40 @@
 
 :root {
   --col-repeat: 1;
-  --col-template: 1fr;
-  --col-gap: 1rem;
+  --col-template: content;
+  --col-gap: var(--gap);
   --col-pad: var(--col-gap);
-  --row-repeat: 1;
+  --row-repeat: auto;
   --row-template: content;
-  --row-gap: 1rem;
+  --row-gap: var(--gap);
   --row-pad: var(--row-gap);
-  --gap: 1rem;
+  --gap: inherit;
 
   --col-start: auto;
   --col-span: auto;
   --row-start: auto;
   --row-span: auto;
-  --h-alignment: center;
-  --v-alignment: center;
-  font-family: 'Inter', sans-serif;
+
+
+
+  font-family: 'Inter',
+  sans-serif;
   transition: font-weight .45s cubic-bezier(.25, .8, .25, 1);
 }
 
 body {
-    margin:0;
-    overflow:hidden;
+  margin: 0;
+  overflow: hidden;
 
 
-    h1,h2,h3,h4,h5,h6,p,span {
-        margin:0!important;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span {
+    margin: 0 !important;
+  }
 }

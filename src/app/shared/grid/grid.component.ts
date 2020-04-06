@@ -31,6 +31,7 @@ export class GridComponent implements OnInit, OnChanges {
       name: this.name,
       cols: this.getBreakpointValues(this.cols),
       colTemplate: this.getBreakpointValues(this.colTemplate),
+      gap:this.getBreakpointValues(this.gap),
       colGap: this.colGap ? this.getBreakpointValues(this.colGap) : this.getBreakpointValues(this.gap),
       rows: this.getBreakpointValues(this.rows),
       rowTemplate: this.getBreakpointValues(this.rowTemplate),
@@ -63,6 +64,7 @@ export class GridComponent implements OnInit, OnChanges {
     const styles =
       this.setCssVar('--col-repeat', this.grid.cols[bp]) +
       this.setCssVar('--col-template', this.grid.colTemplate[bp]) +
+      this.setCssVar('--gap', this.grid.gap[bp]) +
       this.setCssVar('--col-gap', this.grid.colGap[bp]) +
       this.setCssVar('--row-repeat', this.grid.rows[bp]) +
       this.setCssVar('--row-template', this.grid.rowTemplate[bp]) +

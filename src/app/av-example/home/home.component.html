@@ -1,30 +1,32 @@
 <grid cols="12">
-        <cell [position]="{size:'12X1'}" class="hero mat-card mat-elevation-z3">
-            <div class="background"></div>
-            <div class="content">
-                <div>
-                    <h1 class="mat-display-3">Welcome Home</h1>
-                    <p>Lights are on. Sonos is playing. Shades are up.</p>
-    
-                </div>
-            </div>
-    </cell>
+  <cell [position]="{size:'12X1'}" class="hero mat-card mat-elevation-z3">
+    <div class="background"></div>
+    <div class="content">
+      <div>
+        <h1 class="mat-display-3">Welcome Home</h1>
+        <p>Lights are on. Sonos is playing. Shades are up.</p>
+
+      </div>
+    </div>
+  </cell>
 
   <ng-container *ngFor="let level of levels">
     <cell [position]="{x:1, size:'12X1'}">
-        <h3 class="mat-headline">{{level.name}}</h3>
+      <h3 class="mat-headline">{{level.name}}</h3>
     </cell>
     <ng-container *ngFor="let space of level.spaces">
       <cell [position]="{size:'6X1'}" class="space mat-card mat-elevation-z3">
         <div class="background" [ngStyle]="{'background-image': 'url(' + space.image + ')' }"></div>
         <div class="content">
-            <div>
-                <h3 class="mat-display-1">{{space.name}}</h3>
-                <p>{{space.description}}</p>
-
-            </div>
-            
-                <h3 class="mat-display-2" content-alignment="center middle">{{space.temperature}}</h3>
+          <grid colTemplate="1fr 64px">
+            <cell>
+              <h3 class="mat-display-1">{{space.name}}</h3>
+              <p>{{space.description}}</p>
+            </cell>
+            <cell>
+            <h3 class="mat-display-2" content-alignment="center middle">{{space.temperature}}</h3>
+            </cell>
+          </grid>
         </div>
       </cell>
     </ng-container>

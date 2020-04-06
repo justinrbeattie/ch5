@@ -11,6 +11,7 @@ export interface GridTemplate {
     name?: string,
     cols?: GridBreakpointTemplate;
     colTemplate?: GridBreakpointTemplate;
+    gap?: GridBreakpointTemplate;
     colGap?: GridBreakpointTemplate;
     rows?: GridBreakpointTemplate;
     rowTemplate?: GridBreakpointTemplate;
