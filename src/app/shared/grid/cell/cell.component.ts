@@ -78,7 +78,7 @@ export class CellComponent implements OnInit {
   isValidpositionTemplate(inputValue) {
     const positionTemplate: PositionTemplate = { x: null, y: null, size: null };
     /*  if html attribute has a valid position template e.g. [position]="{ x: '', y: '', size: '' }"*/
-    if (Object.keys(inputValue).length > 0 && Object.keys(inputValue).every(key => { return Object.keys(positionTemplate).indexOf(key) !== -1; })) {
+    if (Object.keys(inputValue).length > 0 && Object.keys(inputValue).some(key => { return Object.keys(positionTemplate).indexOf(key) !== -1; })) {
       return true;
     } else {
       console.error(this.name + ' cell does not have a valid position template:' + inputValue);
@@ -100,9 +100,9 @@ export class CellComponent implements OnInit {
     if(this.cell.position) {
       const styles =
       this.setCssVar('--col-start', this.cell.position[bp].x) +
-      this.setCssVar('--col-span', this.cell.position[bp].size.charAt(0)) +
+      this.setCssVar('--col-span', this.cell.position[bp].size.split('X', 1)[0]) +
       this.setCssVar('--row-start', this.cell.position[bp].y) +
-      this.setCssVar('--row-span', this.cell.position[bp].size.charAt(2));
+      this.setCssVar('--row-span', this.cell.position[bp].size.split('X').pop());
 
       if (styles != this.styles) {
         this.renderer.setAttribute(this.elRef.nativeElement, 'style', styles);

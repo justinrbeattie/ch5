@@ -1,0 +1,66 @@
+:host {
+  display: block;
+  height: 100%;
+
+  mat-toolbar,
+  mat-sidenav-container {
+    --toolbar-height: 64px;
+    --title-weight: 700;
+    --title-size: 20px;
+  }
+
+  mat-toolbar {
+    height: var(--toolbar-height);
+    background: rgba(#393939, .5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    z-index: 100;
+
+    h1 {
+      font-weight: var(--title-weight);
+      font-size: var(--title-size);
+      transition: all .4s cubic-bezier(.35, 0, .25, 1);
+    }
+
+    transition: all .4s cubic-bezier(.35, 0, .25, 1);
+  }
+
+  mat-sidenav-container {
+    height: var(--window-height);
+    margin-top: calc(-1 * var(--toolbar-height));
+  }
+
+  mat-sidenav {
+    padding-top: var(--toolbar-height);
+    width: 200px;
+    box-shadow: 3px 0 6px rgba(0, 0, 0, .24);
+    transition: padding-top .4s cubic-bezier(.35, 0, .25, 1);
+  }
+
+  mat-sidenav-content {
+    padding-top: var(--toolbar-height);
+  }
+
+}
+
+:host-context(.xs) {
+
+  mat-toolbar,
+  mat-sidenav-container {
+    --toolbar-height: 56px;
+    --title-weight: 500;
+  }
+}
+
+
+:host-context(.scrolling-down) {
+
+  mat-toolbar,
+    mat-sidenav-container {
+    --toolbar-height: 32px;
+    --title-weight: 500;
+    --title-size: 16px;
+  }
+
+}

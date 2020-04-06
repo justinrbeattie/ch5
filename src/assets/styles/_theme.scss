@@ -8,15 +8,15 @@
 // have to load a single css file for Angular Material in your app.
 
 // Fonts
-@import 'https://fonts.googleapis.com/css?family=Material+Icons';
+@import 'https://fonts.googleapis.com/css?family=Material+Icons+Sharp';
 @import url('https://fonts.googleapis.com/css?family=Inter:300,400,500');
 
-$fontConfig: (display-4: mat-typography-level(112px, 112px, 300, 'Inter', -0.0134em),
-  display-3: mat-typography-level(56px, 56px, 400, 'Inter', -0.0089em),
-  display-2: mat-typography-level(45px, 48px, 400, 'Inter', 0.0000em),
-  display-1: mat-typography-level(34px, 40px, 400, 'Inter', 0.0074em),
-  headline: mat-typography-level(24px, 32px, 400, 'Inter', 0.0000em),
-  title: mat-typography-level(20px, 32px, 500, 'Inter', 0.0075em),
+$fontConfig: (display-4: mat-typography-level(112px, 112px, 700, 'Inter', -0.0134em),
+  display-3: mat-typography-level(56px, 56px, 700, 'Inter', -0.0089em),
+  display-2: mat-typography-level(45px, 48px, 700, 'Inter', 0.0000em),
+  display-1: mat-typography-level(34px, 40px, 700, 'Inter', 0.0074em),
+  headline: mat-typography-level(24px, 32px, 700, 'Inter', 0.0000em),
+  title: mat-typography-level(20px, 32px, 700, 'Inter', 0.0075em),
   subheading-2: mat-typography-level(16px, 28px, 400, 'Inter', 0.0094em),
   subheading-1: mat-typography-level(15px, 24px, 500, 'Inter', 0.0067em),
   body-2: mat-typography-level(14px, 24px, 500, 'Inter', 0.0179em),
@@ -138,40 +138,41 @@ $mat-dark-theme-background: (background: $dark-background,
 // Theme Config
 
 body {
-  --primary-color: #7988fb;
-  --primary-lighter-color: #d7dbfe;
-  --primary-darker-color: #5c6bf9;
+  --primary-color: #f9d4bb;
+  --primary-lighter-color: #fdf2eb;
+  --primary-darker-color: #f6c3a4;
   --text-primary-color: #{$dark-primary-text};
   --text-primary-lighter-color: #{$dark-primary-text};
-  --text-primary-darker-color: #{$light-primary-text};
+  --text-primary-darker-color: #{$dark-primary-text};
+  --status-bar-dark: #{$dark-bg-lighter-5};
 }
 
-$mat-primary: (main: #7988fb,
-  lighter: #d7dbfe,
-  darker: #5c6bf9,
-  200: #7988fb, // For slide toggle,
+$mat-primary: (main: #f9d4bb,
+  lighter: #fdf2eb,
+  darker: #f6c3a4,
+  200: #f9d4bb, // For slide toggle,
   contrast : (main: $dark-primary-text,
     lighter: $dark-primary-text,
-    darker: $light-primary-text,
+    darker: $dark-primary-text,
   ));
 $theme-primary: mat-palette($mat-primary, main, lighter, darker);
 
 body {
-  --accent-color: #86d6ef;
-  --accent-lighter-color: #dbf3fa;
-  --accent-darker-color: #69c6e8;
+  --accent-color: #cc895c;
+  --accent-lighter-color: #f0dcce;
+  --accent-darker-color: #b96c41;
   --text-accent-color: #{$dark-primary-text};
   --text-accent-lighter-color: #{$dark-primary-text};
-  --text-accent-darker-color: #{$dark-primary-text};
+  --text-accent-darker-color: #{$light-primary-text};
 }
 
-$mat-accent: (main: #86d6ef,
-  lighter: #dbf3fa,
-  darker: #69c6e8,
-  200: #86d6ef, // For slide toggle,
+$mat-accent: (main: #cc895c,
+  lighter: #f0dcce,
+  darker: #b96c41,
+  200: #cc895c, // For slide toggle,
   contrast : (main: $dark-primary-text,
     lighter: $dark-primary-text,
-    darker: $dark-primary-text,
+    darker: $light-primary-text,
   ));
 $theme-accent: mat-palette($mat-accent, main, lighter, darker);
 
@@ -195,14 +196,15 @@ $mat-warn: (main: #fb5959,
 $theme-warn: mat-palette($mat-warn, main, lighter, darker);
 ;
 
-$theme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
-$altTheme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+$theme-dark: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
+$theme-light: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 
-// Theme Init
-@include angular-material-theme($theme);
+.color-scheme-dark {
+  @include angular-material-theme($theme-dark);
+}
 
-.theme-alternate {
-  @include angular-material-theme($altTheme);
+.color-scheme-light {
+  @include angular-material-theme($theme-light);
 }
 
 
@@ -225,7 +227,7 @@ $altTheme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 
 .material-icons {
   font-size: 24px;
-  font-family: 'Material Icons', 'Material Icons';
+  font-family: 'Material Icons Sharp', 'Material Icons';
 
   .mat-badge-content {
     font-family: 'Inter';
