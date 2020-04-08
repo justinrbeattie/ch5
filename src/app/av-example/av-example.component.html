@@ -1,9 +1,8 @@
-<mat-toolbar [class.sidenav-open]="drawer._opened">
+<div class="menu-button" content-alignment="center middle">
   <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
-  <h1 class="mat-headline">32 Brett Avenue</h1>
-</mat-toolbar>
+</div>
 <mat-sidenav-container>
   <mat-sidenav #drawer fixedInViewport="true" attr.role="navigation" mode="side" opened="false">
     <mat-nav-list>
@@ -13,6 +12,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content #sidenavContent>
-    <router-outlet></router-outlet>
+    <app-hero></app-hero>
+    <router-outlet (activate)="componentAdded($event)" (deactivate)="componentRemoved($event)"></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

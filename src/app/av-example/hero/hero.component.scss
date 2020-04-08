@@ -1,0 +1,74 @@
+:host {
+    display: block;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    position: relative;
+    top: 0;
+    width: var(--window-width);
+    z-index: 50;
+    height: calc(40vh - 128px);
+    transition: all .1s ease-in-out;
+
+    .background {
+      background: url(../../../assets/mock-images/front-door.jpg);
+      width: 100%;
+      height: 40vh;
+      background-size: cover;
+      position: absolute;
+      filter: brightness(0.5);
+      overflow: hidden;
+
+    }
+
+    .fixed-toolbar {
+      position: absolute;
+      width: var(--window-width);
+      height: 128px;
+      bottom: -128px;
+      z-index: 100;
+      backdrop-filter: blur(calc(.1px * var(--scroll-position)));
+
+      &:before {
+        content: '';
+        width: calc((-40vh + 300px) + (1px * var(--scroll-position)));
+        max-width: 64px;
+        height: 64px;
+        display: block;
+      }
+
+      .description {
+        width: 50vw;
+      }
+
+      ;
+
+      h1 {
+        font-size: calc(56px - (var(--scroll-position)*.11px));
+        font-weight: calc(700 - var(--scroll-position));
+        margin-right: var(--gap) !important;
+      }
+    }
+  }
+
+  :host-context(body:not(.shrink-hero)) .fixed-toolbar {
+    box-shadow: none;
+  }
+  
+  :host-context(.shrink-hero) {
+    .fixed-toolbar {
+      position: fixed;
+      height: 64px;
+      top: 0;
+      backdrop-filter: blur(30px);
+  
+      .description {
+        width: calc(var(--window-width) - (var(--gap)*2))
+      }
+  
+      h1 {
+        font: 400 20px/40px Inter;
+      }
+  
+  
+    }
+  }

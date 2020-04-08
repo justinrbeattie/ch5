@@ -6,6 +6,7 @@
 
 
 :root {
+  --scroll-position:0;
   --col-repeat: 1;
   --col-template: content;
   --col-gap: var(--gap);
@@ -21,11 +22,12 @@
   --row-start: auto;
   --row-span: auto;
 
-
+  box-sizing:border-box;
 
   font-family: 'Inter',
   sans-serif;
   transition: font-weight .45s cubic-bezier(.25, .8, .25, 1);
+
 }
 
 body {

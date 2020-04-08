@@ -1,15 +1,4 @@
 <grid cols="12">
-  <cell [position]="{size:'12X1'}" class="hero mat-card mat-elevation-z3">
-    <div class="background"></div>
-    <div class="content">
-      <div>
-        <h1 class="mat-display-3">Welcome Home</h1>
-        <p>Lights are on. Sonos is playing. Shades are up.</p>
-
-      </div>
-    </div>
-  </cell>
-
   <ng-container *ngFor="let level of levels">
     <cell [position]="{x:1, size:'12X1'}">
       <h3 class="mat-headline">{{level.name}}</h3>
